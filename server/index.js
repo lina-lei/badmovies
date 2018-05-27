@@ -1,8 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var request = require('request')
+var request = require('request');
 var app = express();
-
+var db = require('./database.js'); //link up to DB
 var apiHelpers = require('./apiHelpers.js');
 
 app.use(bodyParser.json());
@@ -31,7 +31,8 @@ app.get('/genres', function(req, res) {
 });
 
 app.post('/save', function(req, res) {
-
+  
+  db.save();
 });
 
 app.post('/delete', function(req, res) {
