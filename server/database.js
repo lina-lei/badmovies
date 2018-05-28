@@ -9,21 +9,14 @@ const getAllFavorites = function(callback) {
   console.log(chalk.blue('doing a get request'));
   // get favorites from the database
   let queryStr = 'SELECT * FROM favmovies';
-  connection.query(queryStr, function(err, data) {
-    if (err) console.log('error retrieving from DB', err);
-    else callback(data);
-  });
+  connection.query(queryStr, callback);
 };
 
 const saveFavorite = function(favorite, callback) {
   console.log(chalk.green('doing a save request'));
   // save movie to favorites in the database
-  // let queryStr = 'INSERT INTO favmovies VALUES (01, "Spirited Away", "2001-07-20", 8.4, "/dL11DBPcRhWWnJcFXl9A07MrqTI.jpg")';
   let queryStr = 'INSERT INTO favmovies VALUES (?, ?, ?, ?, ?)';
-  connection.query(queryStr, [favorite.id, favorite.title, favorite.release_date, favorite.vote_average, favorite.poster_path], function(err, data) {
-    if (err) console.log('error saving into DB', err);
-    else callback(data);
-  });
+  connection.query(queryStr, [favorite.id, favorite.title, favorite.release_date, favorite.vote_average, favorite.poster_path], callback);
 };
 
 const deleteFavorite = function(favorite, callback) {
@@ -31,10 +24,7 @@ const deleteFavorite = function(favorite, callback) {
   // delete a movie from favorites in the database
   console.log(favorite.id);
   let queryStr = `DELETE FROM favmovies WHERE id = (?)`;
-  connection.query(queryStr, [favorite.id], function(err, data) {
-    if (err) console.log('error deleting from DB', err);
-    else callback(data);
-  });
+  connection.query(queryStr, [favorite.id], callback);
 };
 
 // CREATE TABLE favmovies (
