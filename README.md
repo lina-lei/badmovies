@@ -5,15 +5,15 @@ Learn the fundamentals of application structure and database integration by maki
 
 ### Basic functionality (CRUD app minus update functionality): 
 
-[ ] User should be allowed to search for movies by genre
+[x] User should be allowed to search for movies by genre
 
-[ ] User should be given a list of official genres to choose from
+[x] User should be given a list of official genres to choose from
 
-[ ] Movies should be sorted to show the movies with horrible ratings first (figure out how to modify the API endpoint to do so)
+[x] Movies should be sorted to show the movies with horrible ratings first (figure out how to modify the API endpoint to do so)
 
-[ ] User should be able to click on a movie within the search results in order to save it to their favorites (mySQL database, you must make your own Schema)
+[x] User should be able to click on a movie within the search results in order to save it to their favorites (mySQL database, you must make your own Schema)
 
-[ ] If a user is viewing their favorites they should be able to delete a movie from their favorites by clicking on it
+[x] If a user is viewing their favorites they should be able to delete a movie from their favorites by clicking on it
 
 ### The API for the application:
 
